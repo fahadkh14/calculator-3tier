@@ -109,7 +109,7 @@ docker compose version
 ### Clone the repository
 
 ```bash
-git clone https://github.com/your-username/calculator-3tier.git
+git clone https://github.com/fahadkh14/calculator-3tier.git
 
 cd calculator-3tier
 ```
