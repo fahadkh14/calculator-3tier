@@ -1,0 +1,63 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: cal_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: calculator
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - calculator-network
+
+  backend:
+    build: ./backend
+    container_name: cal-backend
+    restart: always
+    ports:
+      - "5000:5000"
+    
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_NAME: calculator
+
+    depends_on:
+      - db
+    networks:
+      - calculator-network
+
+  frontend:
+    build: ./frontend
+    container_name: cal-frontend
+    ports:
+      - "8085:80"
+    depends_on:
+      - backend
+    networks:
+      - calculator-network     
+
+
+networks:
+
+  calculator-network:
+
+    driver: bridge
+
+
+
+
+
+
+# Persistent Storage
+
+volumes:
+
+  mysql-data:

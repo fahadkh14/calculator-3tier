@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Neon Calculator | 3 Tier App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <div class="card">
+
+
+        <div class="logo">
+            ⚡
+        </div>
+
+
+        <h1>
+            Neon Calculator
+        </h1>
+
+
+        <p class="subtitle">
+            Docker 3-Tier Application
+        </p>
+
+
+
+        <div class="inputs">
+
+
+            <input 
+            type="number" 
+            id="num1"
+            placeholder="Enter First Number">
+
+
+            <input 
+            type="number" 
+            id="num2"
+            placeholder="Enter Second Number">
+
+
+        </div>
+
+
+
+
+        <div class="buttons">
+
+
+            <button 
+            class="add"
+            onclick="calculate('add')">
+                +
+            </button>
+
+
+
+            <button 
+            class="sub"
+            onclick="calculate('sub')">
+                −
+            </button>
+
+
+
+            <button 
+            class="mul"
+            onclick="calculate('mul')">
+                ×
+            </button>
+
+
+
+            <button 
+            class="div"
+            onclick="calculate('div')">
+                ÷
+            </button>
+
+
+        </div>
+
+
+
+
+
+        <div class="result-box">
+
+
+            <h3>
+                Your Result
+            </h3>
+
+
+            <div id="result">
+                0
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <div class="history">
+
+
+            <h2>
+                Recent History
+            </h2>
+
+
+            <ul id="history">
+
+
+                <li>
+                    No calculations yet
+                </li>
+
+
+            </ul>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
